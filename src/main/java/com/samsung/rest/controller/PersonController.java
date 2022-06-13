@@ -15,22 +15,19 @@ import java.util.stream.Collectors;
 public class PersonController {
     private final PersonService personService;
 
+    @GetMapping("/person") public List<PersonDto> getAllPerson(){
+        return personService.getAll().stream().map(PersonDto::toDto)
+                .collect(Collectors.toList());
+    }
+
     @PostMapping("/person")
     public PersonDto insertPerson(@RequestBody PersonDto personDto){
         Person person = personService.insert(PersonDto.toDomainObject(personDto));
         return PersonDto.toDto(person);
     }
     @PutMapping("/person/{id}")
-    public PersonDto updatePerson(@PathVariable int id,
-                                  @RequestParam String name,
-                                  @RequestParam String telephone,
-                                  @RequestParam String email,
-                                  @RequestParam String city,
-                                  @RequestParam String photo,
-                                  @RequestParam String date_of_birth,
-                                  @RequestParam int age){
-        Person person = personService.update(id, name, telephone, email, city, photo,
-                date_of_birth, age);
+    public PersonDto updatePerson(@RequestBody PersonDto personDto){
+        Person person = personService.update(PersonDto.toDomainObject(personDto));
 
         return PersonDto.toDto(person);
     }

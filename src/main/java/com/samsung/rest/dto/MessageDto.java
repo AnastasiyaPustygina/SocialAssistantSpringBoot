@@ -23,5 +23,11 @@ public class MessageDto {
                 ChatDto.toDto(message.getChat()));
 
     }
+    public static Message toDomainObject(MessageDto messageDto){
+
+        return new Message(messageDto.getId(), messageDto.getWhose(),
+                messageDto.getValue(), messageDto.getTime(), ChatDto.toDomainObject(
+                messageDto.getChatDto()));
+    }
 
 }

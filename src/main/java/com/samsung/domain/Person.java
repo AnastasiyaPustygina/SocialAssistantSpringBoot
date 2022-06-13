@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,5 +30,7 @@ public class Person {
     private String date_of_birth;
     @Column(name = "age")
     private int age;
+    @Column(name = "password")
+    private String password;
 
 }

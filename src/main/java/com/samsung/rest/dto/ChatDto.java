@@ -23,5 +23,4 @@ public class ChatDto {
         return new Chat(chatDto.getId(), PersonDto.toDomainObject(chatDto.getPersonDto()),
                 OrganizationDto.toDomainObject(chatDto.getOrganizationDto()));
     }
-
 }

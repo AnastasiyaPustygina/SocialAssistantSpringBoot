@@ -9,6 +9,7 @@ public interface ChatService {
     List<Chat> getAll();
     Chat insert(Chat chat);
     Chat getById(int id);
+    int getChatSize();
     Chat getByPersonIdAndOrganizationId(int person_id, int organization_id);
     void deleteById(int id);
 }

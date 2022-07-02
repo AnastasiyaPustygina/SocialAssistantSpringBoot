@@ -31,13 +31,19 @@ public class OrganizationController {
                 OrganizationDto.toDomainObject(organizationDto));
         return OrganizationDto.toDto(organization);
     }
+
     @DeleteMapping("/organization/{id}")
     public void deleteOrganization(@PathVariable int id){
         organizationService.deleteById(id);
     }
+
     @GetMapping("/organization/{id}")
     public OrganizationDto getOrganizationById(@PathVariable int id){
         Organization organization = organizationService.getById(id);
         return OrganizationDto.toDto(organization);
+    }
+    @GetMapping("/organization/size")
+    public int getOrganizationSize() {
+        return organizationService.getOrgSize();
     }
 }

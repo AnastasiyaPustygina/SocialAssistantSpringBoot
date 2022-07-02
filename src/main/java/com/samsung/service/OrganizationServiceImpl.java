@@ -28,6 +28,11 @@ public class OrganizationServiceImpl implements OrganizationService{
     }
 
     @Override
+    public int getOrgSize() {
+        return organizationRepository.findAll().size();
+    }
+
+    @Override
     public Organization update(Organization organization) {
 
         return organizationRepository.save(organization);

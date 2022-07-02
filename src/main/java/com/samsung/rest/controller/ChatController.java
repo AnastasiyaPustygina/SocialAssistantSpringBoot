@@ -28,6 +28,10 @@ public class ChatController {
         Chat chat = chatService.getById(id);
         return ChatDto.toDto(chat);
     }
+    @GetMapping("/chat/size")
+    public int getChatSize() {
+        return chatService.getChatSize();
+    }
 
     @DeleteMapping("/chat/{id}")
     public void deleteChat(@PathVariable int id){

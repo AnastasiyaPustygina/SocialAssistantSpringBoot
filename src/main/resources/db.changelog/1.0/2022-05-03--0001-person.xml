@@ -45,7 +45,10 @@
                     type="VARCHAR(2000)">
                 <constraints nullable = "false"/>
             </column>
-
+            <column name="favourite_organization"
+                    type="VARCHAR(200000)">
+                <constraints nullable = "false"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

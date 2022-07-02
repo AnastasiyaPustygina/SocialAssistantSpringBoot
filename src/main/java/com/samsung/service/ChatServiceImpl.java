@@ -30,6 +30,11 @@ public class ChatServiceImpl implements ChatService{
     }
 
     @Override
+    public int getChatSize() {
+        return chatRepository.findAll().size();
+    }
+
+    @Override
     public Chat getByPersonIdAndOrganizationId(int person_id, int organization_id) {
         Chat chat = chatRepository.findByPersonIdAndOrganizationId(person_id, organization_id);
         return chat;

@@ -32,5 +32,7 @@ public class Person {
     private int age;
     @Column(name = "password")
     private String password;
+    @Column(name = "favourite_organization")
+    private String favourite_organization;
 
 }

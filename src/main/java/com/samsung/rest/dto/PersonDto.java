@@ -15,17 +15,18 @@ public class PersonDto {
     private int id;
     private String name, telephone, email, city, photo, date_of_birth;
     private int age;
-    private String password;
+    private String password, favourite_organization;
     public static PersonDto toDto(Person person){
         return new PersonDto(person.getId(), person.getName(), person.getTelephone(),
                 person.getEmail(), person.getCity(), person.getPhoto(), person.getDate_of_birth(),
-                person.getAge(), person.getPassword());
+                person.getAge(), person.getPassword(), person.getFavourite_organization());
     }
     public static Person toDomainObject(PersonDto personDto){
 
         return new Person(personDto.getId(), personDto.getName(), personDto.getTelephone(),
                 personDto.getEmail(), personDto.getCity(), personDto.getPhoto(),
-                personDto.getDate_of_birth(), personDto.getAge(), personDto.getPassword());
+                personDto.getDate_of_birth(), personDto.getAge(), personDto.getPassword(),
+                personDto.getFavourite_organization());
     }
 
 

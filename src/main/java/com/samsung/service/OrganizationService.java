@@ -9,6 +9,7 @@ public interface OrganizationService {
     Organization insert(Organization organization);
     List<Organization> getAll();
     Organization getById(int id);
+    int getOrgSize();
     Organization update(Organization organization);
     void deleteById(int id);
 
